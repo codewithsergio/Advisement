@@ -1,0 +1,109 @@
+:root{
+    --dark-accent-color: #424549;
+}
+
+.StudentRecords{
+    font-family: 'Inter', sans-serif;
+    height: 100vh;
+}
+
+.allowedView{
+    padding: 1rem;
+}
+
+table {
+    margin-top: 0.5rem;
+}
+
+table, th, td {
+    border: 1px solid gray;
+    border-collapse: collapse;
+    padding: 0.5rem;
+}
+
+th {
+    text-align: left;
+}
+
+.CSVButton{
+    text-decoration: none;
+    padding: 0.3rem;
+    border-radius: 1rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+    background-color: transparent;
+}
+
+.CSVButton:hover{
+    text-decoration: underline;
+}
+
+/*
+Themes
+*/
+
+.Light h1 {
+    color: var(--accent-primary-color);
+}
+
+.Light .CSVButton{
+    color: var(--accent-primary-color);
+}
+
+.Light th{
+    background-color: lightgray;
+}
+
+.Dark {
+    background-color: var(--dark-accent-color);
+}
+
+.Dark h1{
+    color: white;
+    background-color: var(--dark-accent-color);
+}
+
+.Dark p {
+    background-color: var(--dark-accent-color);
+    color: white;
+}
+
+.Dark .CSVButton{
+    color: white;
+}
+
+.Dark .allowedView{
+    background-color: var(--dark-accent-color);
+}
+
+.Dark table, .Dark th, .Dark td{
+    border-color: black;
+}
+
+.Dark th{
+    background-color: var(--dark-accent-color);
+    color: white;
+}
+
+.Dark td{
+    background-color: gray;
+    color: white;
+}
+
+.themeButton{
+    margin-top: 1rem;
+    border: none;
+    font-size: 3rem;
+    padding: 0;
+    color: black;
+}
+
+.Dark .themeButton{
+    border-radius: 3rem;
+    height: 48px;
+}
+
+.darkModeIcon{
+    padding: 0;
+    border-radius: 3rem;
+}

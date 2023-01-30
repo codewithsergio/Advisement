@@ -1,24 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import Login from './Login';
+import StudentForm from './StudentForm';
+import StudentRecords from './StudentRecords';
+import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
+  const [user, setUser] = useState([]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="app">
+        <Switch>
+          <Route exact path="/">
+            {/* Admin Login */}
+            {!user[0] ? (
+              <Login setter={setUser}/>
+            ) : (
+              <StudentRecords user={user}/>
+            )}
+          </Route>
+          <Route exact path="/form">
+            {/* QR Code Form Page */}
+            <StudentForm/>
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
