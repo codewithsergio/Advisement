@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './StudentRecords.css'
-import { doc, onSnapshot } from "firebase/firestore"; 
+import { updateDoc, doc, onSnapshot } from "firebase/firestore"; 
 import {db} from './firebase-config';
 import {CSVLink} from 'react-csv';
 import { Icon } from "@iconify/react";
@@ -16,6 +16,21 @@ function StudentRecords({user}) {
     };
     const [recordsList, setRecordsList] = useState([]);
     const todaysDate = new Date();
+
+    const confirmRecordDeletion = () => {
+        if(window.confirm('Are you sure you want to delete records for ALL users? This is inreversible!') === true){
+            // Delete records
+            updateDoc(doc(db, "records", "recordArray"), {
+                information: []
+              })
+              .then(() => {
+                alert(`All data has been deleted!`);
+              })
+              .catch((error) => {
+                alert(error.message);
+            });
+        }
+    };
 
     useEffect(() => {
         // When student submits form, re render page.
@@ -35,6 +50,7 @@ function StudentRecords({user}) {
             filename={`StudentRecords_${todaysDate.toLocaleString()}.csv`}
             data={[['Date', 'Name', 'Student ID', 'Reason'], ...recordsList.map(record => [record.date, record.name, record.studentId, record.reason])]}
             >Download CSV File</CSVLink>
+            <button onClick={() => {confirmRecordDeletion()}}>DELETE Records</button>
             <table>
                 <tbody>
                     <tr>

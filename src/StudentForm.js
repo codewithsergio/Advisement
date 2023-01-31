@@ -93,7 +93,7 @@ function StudentForm() {
             </div>
         ) : (
             <div className="goodbye_page">
-                <h1>Thank you, you can now take a seat!</h1>
+                <h1>We will be with you shortly!</h1>
             </div>
         )}
     </div>
