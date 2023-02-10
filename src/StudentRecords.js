@@ -18,7 +18,7 @@ function StudentRecords({user}) {
     const todaysDate = new Date();
 
     const confirmRecordDeletion = () => {
-        if(window.confirm('Are you sure you want to delete records for ALL users? This is inreversible!') === true){
+        if(window.confirm('This will permanently remove all student records for all users and cannot be undone. Are you sure you want to proceed with deletion?') === true){
             // Delete records
             updateDoc(doc(db, "records", "recordArray"), {
                 information: []
@@ -36,7 +36,6 @@ function StudentRecords({user}) {
         // When student submits form, re render page.
         onSnapshot(doc(db, "records", "recordArray"), (doc) => {
             setRecordsList(doc.data().information.reverse());
-            console.log("setting data again");
         });
     }, []);
 
@@ -50,7 +49,13 @@ function StudentRecords({user}) {
             filename={`StudentRecords_${todaysDate.toLocaleString()}.csv`}
             data={[['Date', 'Name', 'Student ID', 'Reason'], ...recordsList.map(record => [record.date, record.name, record.studentId, record.reason])]}
             >Download CSV File</CSVLink>
-            <button onClick={() => {confirmRecordDeletion()}}>DELETE Records</button>
+            <button className="deleteRecordsButton"
+            onClick={() => {confirmRecordDeletion()}}>DELETE Records</button>
+            <div className="themeButtonDiv">
+                <button className="themeButton" onClick={() => {toggleTheme()}}>
+                    <Icon className="darkModeIcon" icon={"gg:dark-mode"}/>
+                </button>
+            </div>
             <table>
                 <tbody>
                     <tr>
@@ -69,7 +74,6 @@ function StudentRecords({user}) {
                     ))}
                 </tbody>
             </table>
-            <button className="themeButton" onClick={() => {toggleTheme()}}><Icon className="darkModeIcon" icon={"gg:dark-mode"}/></button>
         </div>
     </div>
   )

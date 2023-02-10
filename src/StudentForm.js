@@ -27,7 +27,7 @@ function StudentForm() {
         if (name.length === 0){
             alert("Please write your full name.");
             return;
-        } else if(selected === -1){
+        } else if(selected.length === 0){
             alert("Please choose a reason for your visit.");
             return;
         } else if(id.length !== 9){
