@@ -1,4 +1,4 @@
-#Student Advisement Sign in Records Application
+# Student Advisement Sign in Records Application
 
 Developed an online sign in sheet for the CADV Advising department at my university so students didn't need to sign in with pen and paper, and can instead do it online through a QR code. It also includes a student records view so only admin gmail accounts can access it, through this view admins can view all student data submitted and can even delete all records. There is a feature that allows admins to export the records as a csv file to easily import it into an excel or google sheets file.
 
