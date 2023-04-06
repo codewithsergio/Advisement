@@ -215,7 +215,7 @@ Themes
     align-items: center;
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 3rem;
-    width: max-content;
+    width: 3.7rem;
     height: 3rem;
     cursor: pointer;
     padding: 0 1rem 0 1rem;
@@ -276,4 +276,22 @@ Themes
 
 .Dark .slider:hover{
     box-shadow: 0px 0px 20px white;
+}
+
+.Light label:first-child{
+    opacity: 0;
+    transition: opacity ease-in-out 0.5s;
+}
+
+.Light label:last-child{
+    opacity: 1;
+    transition: opacity ease-in-out 0.5s;
+}
+
+.Dark label:first-child{
+    opacity: 1;
+}
+
+.Dark label:last-child{
+    opacity: 0;
 }
