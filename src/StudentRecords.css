@@ -1,14 +1,54 @@
-:root{
-    --dark-accent-color: #424549;
-}
-
 .StudentRecords{
     font-family: 'Inter', sans-serif;
-    height: 100vh;
 }
 
 .allowedView{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.userMisc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 3rem 1rem 3rem;
+    margin-top: 2rem;
+}
+
+.userMisc p, .userMisc button {
+    margin: 0 1rem 0 1rem;
+}
+
+.userMisc span{
+    font-weight: 600;
+}
+
+.userMisc p {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    color: var(--dark-accent-color);
+}
+
+.StudentRecords .iconify{
+    background-color: transparent;
+}
+
+.navbar{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 1rem;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.navbar h1{
+    font-size: 2.5rem;
 }
 
 .deleteRecordsButton{
@@ -20,26 +60,54 @@
     margin-left: 1rem;
     margin-top: 0.5rem;
     font-weight: 700;
+    transition: all ease-in-out 0.2s;
+    border: 2px solid var(--accent-primary-color);
 }
 
 .deleteRecordsButton:hover{
-    background-color: white;
-    color: var(--accent-primary-color);
+    background-color: var(--dark-accent-color);
     cursor: pointer;
+    transform: scale(1.1);
 }
 
 table {
     margin-top: 0.5rem;
+    margin-bottom: 3rem;
 }
 
 table, th, td {
-    border: 1px solid gray;
     border-collapse: collapse;
     padding: 0.5rem;
 }
 
+table td {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+table tr{
+    border-left: 2px solid rgba(0, 0, 0, 0.5);
+    border-right: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+table tr:first-child{
+    border: none;
+}
+
+table tr:last-child{
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+table th:first-child{
+    border-top-left-radius: 0.5rem;
+}
+
+table th:last-child{
+    border-top-right-radius: 0.5rem;
+}
+
 th {
     text-align: left;
+    border-bottom: 1px solid black;
 }
 
 .CSVButton{
@@ -60,7 +128,7 @@ Themes
 */
 
 .Light h1 {
-    color: var(--accent-primary-color);
+    color: var(--dark-accent-color);
 }
 
 .Light .CSVButton{
@@ -68,7 +136,8 @@ Themes
 }
 
 .Light th{
-    background-color: lightgray;
+    background-color: var(--accent-primary-color);
+    color: white;
 }
 
 .Dark {
@@ -85,6 +154,11 @@ Themes
     color: white;
 }
 
+.Dark .userMisc button:hover{
+    background-color: white;
+    color: var(--dark-accent-color);
+}
+
 .Dark .CSVButton{
     color: white;
 }
@@ -93,35 +167,109 @@ Themes
     background-color: var(--dark-accent-color);
 }
 
+.Dark .userMisc p{
+    background-color: white;
+    color: var(--dark-accent-color);
+    border: 2px solid black;
+}
+
+.Dark tr{
+    border-left: 3px solid black;
+    border-right: 3px solid black;
+}
+
+.Dark tr:first-child{
+    border: none;
+    border-bottom: 3px solid black;
+}
+
+.Dark tr:last-child{
+    border-bottom: 3px solid black;
+}
+
 .Dark table, .Dark th, .Dark td{
     border-color: black;
 }
 
 .Dark th{
-    background-color: var(--dark-accent-color);
+    background-color: rgba(0, 0, 0, 0.4);
     color: white;
 }
 
 .Dark td{
-    background-color: gray;
-    color: white;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: var(--dark-accent-color);
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .Dark .themeButtonDiv{
     background-color: var(--dark-accent-color);
 }
 
-.themeButton{
-    border: none;
-    font-size: 3rem;
-    padding: 0;
-    color: black;
-    margin: 0;
+
+/* Dark Mode Switch  */
+
+.slider{
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
     border-radius: 3rem;
-    height: 48px;
+    width: max-content;
+    height: 3rem;
+    transition: all ease-in-out 0.4s;
+    cursor: pointer;
+    padding: 0 1rem 0 1rem;
 }
 
-.darkModeIcon{
-    padding: 0;
-    border-radius: 3rem;
+.ball{
+    position: absolute;
+    transform: translateX(-0.6rem);
+    background-color: white;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 100%;
+    transition: all ease-in-out 0.4s;
+}
+
+.slider label{
+    cursor: pointer;
+}
+
+.slider label:first-child{
+    margin-right: 0.5rem;
+}
+
+.slider label:last-child{
+    margin-left: 0.5rem;
+}
+
+.Light .slider{
+    background-color: dodgerblue;
+    transition: all ease-in-out 0.1s;
+}
+
+.Light .slider:hover{
+    box-shadow: 0px 0px 20px dodgerblue;
+}
+
+.Light .ball{
+}
+
+.Light .slider label:first-child{
+    right: 0;
+}
+
+
+.Dark .ball{
+    background-color: var(--dark-accent-color);
+    box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 0.3);
+    transform: translateX(2rem);
+}
+
+.Dark .slider{
+    box-shadow: inset 0px 0px 10px black;
+}
+
+.Dark .slider:hover{
+    box-shadow: 0px 0px 20px white;
 }

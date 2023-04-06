@@ -1,3 +1,11 @@
-*{
+.app{
     background-color: #e5e5e5;
+}
+
+:root{
+    --accent-primary-color: #c13538;
+    --accent-text-color: white;
+    --page-back-color: #e5e5e5;
+    --accent-secondary-color: #f4b3a7;
+    --dark-accent-color: #424549;
 }
