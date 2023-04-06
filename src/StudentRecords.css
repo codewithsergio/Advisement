@@ -299,6 +299,7 @@ Themes
     .userMisc{
         width: 100%;
         font-size: 0.8rem;
+        padding: 0;
     }
     .slider{
         width: 5rem;
