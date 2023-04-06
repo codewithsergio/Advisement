@@ -1,5 +1,6 @@
 .StudentRecords{
     font-family: 'Inter', sans-serif;
+    transition: background-color ease-in-out 1s;
 }
 
 .allowedView{
@@ -140,10 +141,6 @@ Themes
     color: white;
 }
 
-.Dark {
-    background-color: var(--dark-accent-color);
-}
-
 .Dark h1{
     color: white;
     background-color: var(--dark-accent-color);
@@ -211,14 +208,15 @@ Themes
 
 .slider{
     display: flex;
+    justify-content: space-between;
     position: relative;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 3rem;
-    width: 3.7rem;
+    width: 5.5rem;
     height: 3rem;
     cursor: pointer;
-    padding: 0 1rem 0 1rem;
+    padding: 0 0.25rem 0 0.25rem;
 }
 
 .ball{
@@ -230,6 +228,7 @@ Themes
     transition: transform 0.4s ease-in-out;
     left: 0;
     transform: translateX(0%);
+    z-index: 10;
 }
 
 .slider label{

@@ -85,7 +85,7 @@ function StudentRecords({ user }) {
           >
             <label>🌙</label>
             <div className="ball"></div>
-            <label>☀️</label>
+            <label>🌞</label>
           </div>
         </div>
         <table>
