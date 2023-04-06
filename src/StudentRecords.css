@@ -108,7 +108,7 @@ table th:last-child{
 
 th {
     text-align: left;
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.4);
 }
 
 .CSVButton{
@@ -214,7 +214,7 @@ Themes
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 3rem;
     width: 5.5rem;
-    height: 3rem;
+    height: 2.3rem;
     cursor: pointer;
     padding: 0 0.25rem 0 0.25rem;
 }
@@ -293,4 +293,26 @@ Themes
 
 .Dark label:last-child{
     opacity: 0;
+}
+
+@media screen and (max-width: 500px) {
+    .userMisc{
+        width: 100%;
+        font-size: 0.8rem;
+    }
+    .slider{
+        width: 5rem;
+        padding: 0;
+    }
+    .ball{
+        width: 2rem;
+        height: 2rem;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    table{
+        width: 95%;
+        font-size: 0.6rem;
+    }
 }

@@ -19,6 +19,7 @@
 }
 
 .loginpage p {
+    margin-bottom: 2rem;
     font-size: 1rem;
     margin-top: 0.4rem;
 }
@@ -35,7 +36,6 @@
 }
 
 .loginpage button{
-    margin-top: 2rem;
     background-color: var(--accent-secondary-color);
     border: none;
     color: var(--accent-primary-color);
@@ -51,4 +51,46 @@
 .loginpage button:hover{
     background-color: var(--accent-primary-color);
     color: white;
+}
+
+@media screen and (max-width: 800px) {
+    .loginpage .loginCard{
+        padding: 3rem 0 3rem 0;
+        width: 90%;
+    }
+
+    .loginpage h1{
+        font-size: 1.2rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .loginpage p{
+        font-size: 0.8rem;
+    }
+
+    .loginpage button{
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (801px < width < 1025px) {
+    .loginpage .loginCard{
+        padding: 3rem 0 3rem 0;
+        width: 70%;
+    }
+
+    .loginpage h1{
+        font-size: 1.5rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .loginpage p{
+        font-size: 1rem;
+    }
+
+    .loginpage button{
+        font-size: 0.8rem;
+    }
 }
